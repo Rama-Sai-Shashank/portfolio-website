@@ -158,7 +158,7 @@ This demonstrates that the application is a true **Single Page Application (SPA)
   tags: ["React.js", "FastAPI", "Hugging Face AI", "FLUX Model", "AI Tools"],
   liveDemo: "https://rama-sai-ai-img-gen.vercel.app/",
   github: "https://github.com/Rama-Sai-Shashank/ai-image-generation.git",
-  category: "Web", "AI"
+  category: "AI"
 },
 {
   title: "JobApplyPro – Job Autofill Chrome Extension",
