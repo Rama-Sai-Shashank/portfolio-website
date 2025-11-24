@@ -1,0 +1,288 @@
+:root {
+  --accent-color: #6d28d9;
+  --accent-glow: rgba(109, 40, 217, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.22);
+}
+
+/* SECTION WRAPPER */
+.projects {
+  position: relative;
+  padding: 5rem 0 7rem; /* extra bottom padding */
+}
+
+/* FLOATING ORBS BACKGROUND */
+.floatingOrb {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+  filter: blur(12px);
+  opacity: 0.25;
+  pointer-events: none;
+  animation: float-orb 12s ease-in-out infinite alternate;
+}
+
+.orb1 {
+  top: 10%;
+  left: 5%;
+}
+
+.orb2 {
+  bottom: 5%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+@keyframes float-orb {
+  from {
+    transform: translateY(0px) translateX(0px);
+  }
+  to {
+    transform: translateY(-30px) translateX(25px);
+  }
+}
+
+/* MAIN TITLE */
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* FILTER BUTTONS */
+.filterButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filterButton {
+  position: relative;
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  color: white;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.filterButton::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0.2rem;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent-color);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.filterButton:hover::after,
+.filterButton.active::after {
+  width: 60%;
+}
+
+.filterButton:hover {
+  background: var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.active {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 18px var(--accent-glow);
+  background: var(--accent-color);
+}
+
+/* GRID */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* always 2 columns on desktop */
+  gap: 2.5rem;
+  position: relative;
+  margin-bottom: 3.5rem;
+}
+
+/* VERTICAL LINE BETWEEN COLUMNS */
+.projectsGrid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(148, 163, 184, 0.8) 25%,
+    rgba(148, 163, 184, 0.8) 75%,
+    transparent 100%
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* CARD */
+.projectCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  min-height: 260px;          /* 🔥 ensure it’s always a full card, not a bar */
+  padding-top: 10px;          /* small buffer so overlay doesn’t squash */
+}
+
+/* neon spinning border on hover */
+.projectCard::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 70deg,
+    var(--accent-color) 120deg,
+    transparent 160deg,
+    transparent 360deg
+  );
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.projectCard:hover::before {
+  opacity: 1;
+  animation: border-spin 1.4s linear infinite;
+}
+
+@keyframes border-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.projectCard:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* GLASS LAYER */
+.glassLayer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.03)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* IMG */
+.projectImage {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: 0.5s ease;
+  display: block;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.15);
+  filter: brightness(1.1);
+}
+
+/* OVERLAY */
+.projectOverlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 3;
+}
+
+.projectOverlay h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: white;
+  text-shadow: 0 0 6px var(--accent-glow);
+}
+
+.projectOverlay p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0.3rem 0;
+}
+
+/* TAGS */
+.projectTags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: var(--accent-color);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+/* CARD GLOW */
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at bottom, var(--accent-glow), transparent 70%);
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.projectCard:hover .cardGlow {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    margin-bottom: 2.5rem;
+  }
+
+  .projectsGrid::before {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.3rem;
+  }
+}

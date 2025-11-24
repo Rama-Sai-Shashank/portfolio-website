@@ -1,0 +1,143 @@
+:root {
+  --accent: #6d28d9;
+  --glow: rgba(109, 40, 217, 0.7);
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+.services {
+  padding: 5rem 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3.5rem;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--glow);
+}
+
+/* GRID */
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+/* DIAMOND WRAPPER */
+.diamondWrapper {
+  perspective: 1200px;
+}
+
+/* DIAMOND SHAPE */
+.diamond {
+  width: 260px;
+  height: 260px;
+  transform: rotate(45deg);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  transition: 0.45s ease;
+  cursor: pointer;
+}
+
+.diamond:hover {
+  transform: rotate(45deg) translateY(-12px) scale(1.05) rotateX(10deg);
+  box-shadow: 0 0 26px var(--glow), 0 0 35px rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* SHINE */
+.shine {
+  position: absolute;
+  top: -180px;
+  left: -50%;
+  width: 200%;
+  height: 140px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(-20deg);
+  transition: 0.4s ease;
+  opacity: 0;
+}
+
+.diamond:hover .shine {
+  opacity: 1;
+  top: -40px;
+}
+
+/* INNER CONTENT (unrotated upright) */
+.innerContent {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-45deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  gap: 0.7rem;
+}
+
+/* ICON */
+.icon {
+  color: var(--accent);
+  text-shadow: 0 0 14px var(--glow);
+  transition: 0.3s ease;
+}
+
+.diamond:hover .icon {
+  transform: scale(1.1);
+}
+
+/* TITLE */
+.heading {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-top: 0.3rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* DESCRIPTION (fade in) */
+.description {
+  opacity: 0;
+  margin-top: 0.5rem;
+  color: #dcdde8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  width: 80%;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(6px);
+}
+
+.diamond:hover .description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .diamond {
+    width: 230px;
+    height: 230px;
+    transform: rotate(0deg); /* unrotate on small screens */
+  }
+
+  .diamond:hover {
+    transform: translateY(-10px) scale(1.04);
+  }
+
+  .innerContent {
+    transform: rotate(0deg);
+  }
+}

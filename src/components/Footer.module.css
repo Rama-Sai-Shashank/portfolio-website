@@ -1,0 +1,128 @@
+:root {
+  --accent: #6d28d9;
+  --accent-glow: rgba(109, 40, 217, 0.6);
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+  padding: 2.5rem 0;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GLASS BOX */
+.footerGlass {
+  width: 85%;
+  padding: 1.8rem 2rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.45), 0 0 22px var(--accent-glow);
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.footerGlass:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.45), 0 0 28px var(--accent-glow);
+  transform: translateY(-4px);
+}
+
+/* subtle top shine line */
+.footerGlass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.4s ease;
+}
+
+.footerGlass:hover::before {
+  opacity: 1;
+  animation: footer-shine 1.3s linear forwards;
+}
+
+@keyframes footer-shine {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+
+/* TEXT */
+.text {
+  color: #dcdcff;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* SOCIAL ICONS */
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+}
+
+.iconLink {
+  color: #ffffff;
+  font-size: 1.6rem;
+  transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
+  position: relative;
+}
+
+.iconLink::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+}
+
+.iconLink:hover {
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent-glow);
+  transform: translateY(-4px) scale(1.05);
+}
+
+.iconLink:hover::after {
+  width: 60%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .footerGlass {
+    width: 95%;
+    padding: 1.5rem 1.2rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .socialIcons a {
+    font-size: 1.4rem;
+  }
+}

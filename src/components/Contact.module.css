@@ -1,0 +1,169 @@
+:root {
+  --accent: #6d28d9;
+  --accent-glow: rgba(109, 40, 217, 0.7);
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.18);
+}
+
+.contact {
+  padding: 5rem 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent-glow);
+  margin-bottom: 3rem;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/* WRAPPER */
+.cardsWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* SHARED CARD STYLING */
+.infoCard,
+.formCard {
+  width: 45%;
+  min-width: 320px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.infoCard:hover,
+.formCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* LEFT CARD CONTENT */
+.infoCard h3 {
+  color: #fff;
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+.infoCard p {
+  color: #dce3ff;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* SOCIAL ICONS */
+.socialIcons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialIcons a {
+  color: #fff;
+  font-size: 2rem;
+  transition: 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* FORM CARD */
+.formCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* FLOATING LABEL INPUTS */
+.field {
+  position: relative;
+  width: 100%;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* FLOATING LABEL */
+.field label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: #c3c8e6;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label,
+.field textarea:focus + label,
+.field textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+/* SUBMIT BUTTON */
+.submitButton {
+  background: var(--accent);
+  padding: 0.9rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  transition: 0.3s;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.submitButton:hover {
+  background: #5b21b6;
+  box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .cardsWrapper {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .infoCard,
+  .formCard {
+    width: 90%;
+  }
+}
