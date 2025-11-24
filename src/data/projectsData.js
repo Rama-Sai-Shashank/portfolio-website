@@ -1,32 +1,37 @@
 // src/data/projectsData.js
 export const projects = [
   {
-    title: "QuickNotes – PHP Notes Manager",
-    url: "/assets/quicknotes-main.png", // thumbnail for the card
-    description:
-      "A simple yet powerful PHP + MySQL notes manager where users can create, edit, delete, and search notes in a clean web UI.",
-    images: [
-      {
-        url: "/assets/quicknotes-1.png",
-        description:
-          "The main QuickNotes dashboard showing all saved notes in a clean list, pulled dynamically from the MySQL database using PHP."
-      },
-      {
-        url: "/assets/quicknotes-2.png",
-        description:
-          "The add / edit note interface where users can quickly create or update notes. Form submissions are handled by PHP and stored in MySQL."
-      },
-      {
-        url: "/assets/quicknotes-3.png",
-        description:
-          "Search and filter functionality that lets users instantly find notes by title or content, implemented using PHP queries and basic frontend scripting."
-      }
-    ],
-    tags: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-    liveDemo: "#", // replace with deployed URL if you have one
-    github: "#",   // replace with your GitHub repo URL
-    category: "Web",
-  },
+  title: "QuickNotes – Minimal Cloud Notes App",
+  url: "/assets/quicknotes-main.jpg",
+  description:
+    "QuickNotes is a lightweight, secure PHP + MySQL cloud notes app built for students and developers. It provides personal note storage, hashed password authentication, clean UI, and mobile-friendly responsive pages — all deployed for free on InfinityFree hosting.",
+  images: [
+    {
+      url: "/assets/quicknotes-1.png",
+      description:
+        "The landing page of QuickNotes showing the minimal blue gradient hero section with Login, Create Account buttons, and highlighted features like hashed authentication, clean UI, and InfinityFree deployment."
+    },
+    {
+      url: "/assets/quicknotes-2.png",
+      description:
+        "The notes dashboard showing the create-note area with Title and Content fields, along with the user's saved notes displayed in a neat card layout."
+    },
+    {
+      url: "/assets/quicknotes-3.png",
+      description:
+        "The edit note page where the user can update existing notes using a clean card UI with input fields and Save Changes button."
+    },
+    {
+      url: "/assets/quicknotes-4.png",
+      description:
+        "The empty notes screen indicating the user has not created any notes yet, with a clean and spacious UI encouraging them to add their first note."
+    }
+  ],
+  tags: ["PHP", "MySQL", "Web App", "Authentication", "InfinityFree"],
+  liveDemo: "https://quicknotes.infinityfree.me/",
+  github: "https://github.com/YOUR-USERNAME/quicknotes-php",
+  category: ["Web"]
+},
   {
     title: "Weather Application",
     url: "/assets/Weather.png", // Thumbnail image for the project card
@@ -94,32 +99,45 @@ This demonstrates that the application is a true **Single Page Application (SPA)
     category: "Web",
   },
   {
-    title: "MediVault – Digital Health Vault",
-    url: "/assets/medivault-main.png", // thumbnail for the card
-    description:
-      "A secure digital health vault that connects patients and clinics, with OTP login, encrypted record storage, and AWS S3-backed file handling.",
-    images: [
-      {
-        url: "/assets/medivault-1.png",
-        description:
-          "The MediVault landing / auth screen showing separate flows for patients and clinics, with OTP-based registration and JWT-secured login."
-      },
-      {
-        url: "/assets/medivault-2.png",
-        description:
-          "The patient dashboard and vault view, where users can upload, download, and manage their medical reports stored securely on AWS S3 via a FastAPI backend."
-      },
-      {
-        url: "/assets/medivault-3.png",
-        description:
-          "The admin / clinic management interface with the ability to view patients, reset passwords, and manage access, demonstrating role-based authorization and real-world healthcare workflows."
-      }
-    ],
-    tags: ["React.js", "FastAPI", "AWS S3", "JWT Auth", "OTP Verification"],
-    liveDemo: "#", // replace with deployed URL if you host it
-    github: "#",   // replace with your MediVault repo URL
-    category: "Web",
-  },
+  title: "MediVault – Secure Digital Health Vault",
+  url: "/assets/medivault-main.jpg",
+  description:
+    "MediVault is a full-stack digital health vault where patients can securely store medical records in the cloud and connect with clinics for real-time consultations. Built with React and FastAPI, it provides separate dashboards for patients and clinics, OTP-based onboarding, AWS S3 storage for reports, and a live chat + prescription panel for remote treatment.",
+  images: [
+    {
+      url: "/assets/medivault-1.png",
+      description:
+        "The futuristic MediVault landing screen with a glowing neon welcome message and top navigation bar, introducing patients and clinics to the secure digital health vault."
+    },
+    {
+      url: "/assets/medivault-2.png",
+      description:
+        "The Clinic Dashboard home view showing three modern cards for Patient Records, Appointments, and Clinic Profile, where hospital staff can manage their complete practice from a single screen."
+    },
+    {
+      url: "/assets/medivault-3.png",
+      description:
+        "The Patient Dashboard displaying connected clinics as stylish cards with location and specialties, allowing users to quickly find and connect with nearby hospitals and doctors."
+    },
+    {
+      url: "/assets/medivault-4.png",
+      description:
+        "The real-time chat interface between clinic and patient, with a side-by-side prescription note editor where doctors can type and save medical prescriptions during the conversation."
+    }
+  ],
+  tags: [
+    "React.js",
+    "FastAPI",
+    "AWS S3",
+    "JWT Auth",
+    "OTP Verification",
+    "WebSockets",
+    "Healthcare"
+  ],
+  github: "https://github.com/Rama-Sai-Shashank/Medi-Vault.git",
+  category: ["Web"]
+}
+,
   {
   title: "NovaVision - AI Powered Image Generator",
   url: "/assets/Ai-image-gen-main.jpg",
