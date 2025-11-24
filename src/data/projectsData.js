@@ -30,7 +30,7 @@ export const projects = [
   tags: ["PHP", "MySQL", "Web App", "Authentication", "InfinityFree"],
   liveDemo: "https://quicknotes.infinityfree.me/",
   github: "https://github.com/YOUR-USERNAME/quicknotes-php",
-  category: ["Web"]
+  category: "Web",
 },
   {
     title: "Weather Application",
@@ -135,7 +135,7 @@ This demonstrates that the application is a true **Single Page Application (SPA)
     "Healthcare"
   ],
   github: "https://github.com/Rama-Sai-Shashank/Medi-Vault.git",
-  category: ["Web"]
+  category: "Web",
 }
 ,
   {
@@ -158,7 +158,7 @@ This demonstrates that the application is a true **Single Page Application (SPA)
   tags: ["React.js", "FastAPI", "Hugging Face AI", "FLUX Model", "AI Tools"],
   liveDemo: "https://rama-sai-ai-img-gen.vercel.app/",
   github: "https://github.com/Rama-Sai-Shashank/ai-image-generation.git",
-  category: ["Web", "AI"]
+  category: "Web", "AI"
 },
 {
   title: "JobApplyPro – Job Autofill Chrome Extension",
