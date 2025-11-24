@@ -122,7 +122,7 @@ This demonstrates that the application is a true **Single Page Application (SPA)
   },
   {
   title: "NovaVision - AI Powered Image Generator",
-  url: "/assets/ai-image-gen-main.png",
+  url: "/assets/ai-image-gen-main.jpg",
   description:
     "NovaVision is a full-stack AI Image Generator built using FastAPI (Python) and React. It converts natural text prompts into high-quality AI-generated images using Hugging Face’s FLUX model, with a clean UI, smooth animations, and downloadable PNG output.",
   images: [
