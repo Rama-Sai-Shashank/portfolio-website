@@ -140,6 +140,22 @@ This demonstrates that the application is a true **Single Page Application (SPA)
   tags: ["React.js", "FastAPI", "Hugging Face AI", "FLUX Model", "AI Tools"],
   liveDemo: "https://rama-sai-ai-img-gen.vercel.app/",
   github: "https://github.com/Rama-Sai-Shashank/ai-image-generation.git",
-  category: "Web, AI"
-}
+  category: ["Web", "AI"]
+},
+{
+  title: "JobApplyPro – Job Autofill Chrome Extension",
+  url: "/assets/jobapplypro-main.jpg",
+  description:
+    "JobApplyPro is a smart Chrome Extension that saves your job profile once and automatically fills job application forms across different websites with a single click. It reduces repetitive typing and speeds up the job-application process with clean UI and intelligent field detection.",
+  images: [
+    {
+      url: "/assets/jobapplypro-1.png",
+      description:
+        "The JobApplyPro popup UI where users can enter and save their complete job profile — name, email, phone number, LinkedIn URL, portfolio URL, skills, and summary — all stored securely using Chrome Storage."
+    }
+  ],
+  tags: ["Chrome Extension", "JavaScript", "Manifest V3", "Automation", "Productivity"],
+  github: "https://github.com/Rama-Sai-Shashank/job-apply-pro.git",
+  category: "Automation"
+},
 ];
