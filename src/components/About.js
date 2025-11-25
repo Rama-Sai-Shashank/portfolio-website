@@ -47,11 +47,10 @@ const About = () => {
 
               <div className={styles.statsRow}>
                 <div className={styles.statCard}>
-                  <span className={styles.statNumber}>10+</span>
+                  <span className={styles.statNumber}>4+</span>
                   <span className={styles.statLabel}>Projects</span>
                 </div>
                 <div className={styles.statCard}>
-                  <span className={styles.statNumber}>3+ yrs</span>
                   <span className={styles.statLabel}>Coding Journey</span>
                 </div>
               </div>
